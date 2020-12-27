@@ -21,8 +21,10 @@ class _BallState extends State<Ball> {
     return Center(
       child: FlatButton(
         onPressed: () {
-          ballNumber = Random().nextInt(4) + 1;
-          print('I got clicked ($ballNumber)');
+          setState(() {
+            ballNumber = Random().nextInt(4) + 1;
+            print('I got clicked ($ballNumber)');
+          });
         },
         child: Padding(
             padding: EdgeInsets.all(16.0),
